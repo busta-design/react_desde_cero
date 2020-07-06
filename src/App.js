@@ -3,6 +3,34 @@ import React from 'react';
 //import './App.css';
 import './styles/styles.scss'
 import Curso from './Curso';
+import logo from './antawara.png'
+
+const cursos = [
+  {
+    "title": "JavaScript desde cero",
+    "image": "https://images.unsplash.com/photo-1515248027005-c33283ec3fba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+    "price": 20,
+    "profesor": "Andres Bustamante"
+  },
+  {
+    "title": "Lectura Veloz",
+    "image": "https://mensvenilia.com/wp-content/uploads/2015/11/speed-reading-barcelona.png",
+    "price": 15,
+    "profesor": "Jose Bustamante"
+  },
+  {
+    "title": "Trucos Matematicos",
+    "image": "https://i.pinimg.com/originals/2c/70/93/2c7093afb7802785d8582c42d11aca81.png",
+    "price": 20,
+    "profesor": "Vladimir Da Silva"
+  },
+  {
+    "title": "Lectura Comprensiva",
+    "image": "https://blog.educalive.com/wp-content/uploads/2020/02/Mejorar-Comprension-Lectora-1024x536.jpg",
+    "price": 10,
+    "profesor": "Alberto Medrano"
+  }
+]
 
 const App = () => (
   <>
@@ -20,18 +48,10 @@ const App = () => (
     </div>
 
     <div className="ed-grid m-grid-3">
-      <Curso/>
-      <Curso/>
-      <Curso/>
-      <Curso/>
-      <Curso/>
-      <Curso/>
-      <Curso/>
-      <Curso/>
-      <Curso/>
-      <Curso/>
-      <Curso/>
-      <Curso/>
+      {
+        cursos.map( c => <Curso title={c.title} image={c.image} price={c.price} profesor={c.profesor}/> )
+      }
+      
       
     </div>
   </>
